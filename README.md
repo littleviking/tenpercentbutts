@@ -5,14 +5,16 @@ Provides butts. Provides a script to replace approximately 10% of the words in a
 ## Javascript Library
 
 Front-end:
-    &lt;script type="text/javascript" src="tenpb/tenpb.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
+
+    <script type="text/javascript" src="tenpb/tenpb.js"></script>
+    <script type="text/javascript">
       var container = document.body;
       tenpb.initModule(container, { percent: 10 });
       // tenpb.detachModule(container);
-    &lt;/script&gt;
+    </script>;
 
 Node:
+
     var tenpb = require('./tenpb.js');
     var my_sentence = "We do our best to respect sentence structure and capitalization.";
     tenpb.initPlainText(my_sentence, { percent: 10 });
