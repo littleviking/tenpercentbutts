@@ -5,12 +5,12 @@ Provides butts. Provides a script to replace approximately 10% of the words in a
 ## Javascript Library
 
 Front-end:
-    <script type="text/javascript" src="tenpb/tenpb.js"></script>
-    <script type="text/javascript">
+    &lt;script type="text/javascript" src="tenpb/tenpb.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
       var container = document.body;
       tenpb.initModule(container, { percent: 10 });
       // tenpb.detachModule(container);
-    </script>
+    &lt;/script&gt;
 
 Node:
     var tenpb = require('./tenpb.js');
