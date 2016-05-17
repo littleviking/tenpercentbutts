@@ -5,7 +5,7 @@ var save_values,
     input_range_readout = document.getElementById('ten-percent-butts-percent-value');
 
 document.addEventListener('DOMContentLoaded', function() {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     auto: false,
     percent: 10
   }, function(settings) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 save_values = function() {
-  chrome.storage.sync.set({
+  chrome.storage.local.set({
     auto: input_auto.checked,
     percent: input_range.value
   }, function() {

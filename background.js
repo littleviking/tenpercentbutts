@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if ( request.message === "getSettings" ) {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
       auto: false,
       percent: 10
     }, function(settings) {
