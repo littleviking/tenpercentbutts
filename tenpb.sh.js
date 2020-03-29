@@ -1,20 +1,32 @@
 #!/usr/bin/env node
 
-var tenpb = require('./tenpb.js');
+var tenPB = require('./tenpb.node');
+var argv = require('minimist')(process.argv.slice(2), { alias: { percent: 'p', words: 'w', syllable: 's', debug: 'd' } });
+var options = [];
+
+if (argv.percent) {
+  options.percent = argv.percent;
+}
+
+if (argv.words) {
+  options.word_bases = argv.words.split(',');
+}
+
+if (argv.syllable) {
+  options.syllable = true;
+}
+
+if (argv.debug) {
+  options.debug = true;
+}
 
 if (process.stdin.isTTY) {
-  // Even though executed by name, the first argument is still "node",
-  // the second the script name. The third is the string we want.
+  // Called directly: tenpb 'Lorem ipsum dolor sit amet'
   data = new Buffer(process.argv[2] || '');
-  if (data) process.stdout.write(tenpb.initPlainText(data) + "\n");
+  process.stdout.write(tenPB(data, options) + "\n");
 }
- 
-// ------------------------------------------------------------
-// Accepting piped content. E.g.:
-// echo "pass in this string as input" | ./example-script
-// ------------------------------------------------------------
- 
 else {
+  // Piped: fortune | tenpb | cowsay
   data = '';
  
   process.stdin.on('readable', function() {
@@ -25,6 +37,6 @@ else {
   });
  
   process.stdin.on('end', function () {
-    if (data) process.stdout.write(tenpb.initPlainText(data));
+    process.stdout.write(tenPB(data, options) + "\n");
   });
 }

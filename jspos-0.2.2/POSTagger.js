@@ -1,3 +1,4 @@
+const { POSTAGGER_LEXICON, LEXICON_TAG_MAP } = require('./lexicon.js');
 /*!
  * jsPOS
  *
@@ -11,26 +12,6 @@
 function POSTagger(){
     this.lexicon = POSTAGGER_LEXICON;
     this.tagsMap = LEXICON_TAG_MAP;
-}
-
-/**
- * Indicates whether or not this string starts with the specified string.
- * @param {Object} string
- */
-String.prototype.startsWith = function(string){
-    if (!string) 
-        return false;
-    return this.indexOf(string) == 0;
-}
-
-/**
- * Indicates whether or not this string ends with the specified string.
- * @param {Object} string
- */
-String.prototype.endsWith = function(string){
-    if (!string || string.length > this.length) 
-        return false;
-    return this.indexOf(string) == this.length - string.length;
 }
 
 POSTagger.prototype.wordInLexicon = function(word){
@@ -116,3 +97,6 @@ POSTagger.prototype.prettyPrint = function(taggedWords) {
 }
 
 //print(new POSTagger().tag(["i", "went", "to", "the", "store", "to", "buy", "5.2", "gallons", "of", "milk"]));
+if (typeof module === 'object' && module.exports) {
+    module.exports = POSTagger;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "tenpercentbutts",
+  "version": "1.0.0",
+  "description": "Provides butts. Provides a script to replace approximately 10% of the words in a selection with the word \"butts.\" We do our best to respect sentence structure and capitalization.",
+  "main": "tenpb.node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littleviking/tenpercentbutts.git"
+  },
+  "author": "Kevin Herrington <littleviking001@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/littleviking/tenpercentbutts/issues"
+  },
+  "homepage": "https://github.com/littleviking/tenpercentbutts#readme",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "nlp-syllables": "0.0.5",
+    "underscore": "^1.9.2"
+  }
+}

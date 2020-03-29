@@ -64,3 +64,6 @@ Lexer.prototype.lex = function(string){
 
 //var lexer = new Lexer();
 //print(lexer.lex("I made $5.60 today in 1 hour of work.  The E.M.T.'s were on time, but only barely.").toString());
+if (typeof module === 'object' && module.exports) {
+    module.exports = Lexer;
+}
