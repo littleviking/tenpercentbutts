@@ -19,6 +19,6 @@
   "dependencies": {
     "minimist": "^1.2.5",
     "nlp-syllables": "0.0.5",
-    "underscore": "^1.9.2"
+    "underscore": "^1.12.1"
   }
 }
