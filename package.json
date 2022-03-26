@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/littleviking/tenpercentbutts#readme",
   "dependencies": {
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "nlp-syllables": "0.0.5",
     "underscore": "^1.9.2"
   }
